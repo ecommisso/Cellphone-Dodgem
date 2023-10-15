@@ -419,3 +419,20 @@ class Player:
         #     # self.goal_stall = None
         #     return self.pos_x, self.pos_y
 
+    def move_after_collision(self):
+        # Assuming 'self' refers to an instance of the Player class
+
+        # Check if the player has encountered an obstacle
+        if self.encounter_obstacle():
+            # Implement logic to move to the left after encountering an obstacle
+            # For example, you can update the position based on your requirements
+            self.pos_x -= 1
+            self.pos_y -= 1  # Adjust as needed based on your game's logic
+
+        # Check if the player has encountered another player
+        for other_player in self.other_players_list:
+            if self._check_collision(self.pos_x, self.pos_y, self.goal_stall.x, self.goal_stall.y, other_player.pos_x, other_player.pos_y, other_player.goal_stall.x, other_player.goal_stall.y):
+                # Implement logic to move to the left after colliding with another player
+                # For example, you can update the position based on your requirements
+                self.pos_x -= 1
+                self.pos_y -= 1  # Adjust as needed based on your game's logic
